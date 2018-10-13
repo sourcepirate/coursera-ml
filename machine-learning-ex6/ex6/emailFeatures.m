@@ -50,6 +50,11 @@ x = zeros(n, 1);
 
 
 
+for i = 1:size(word_indices)
+   idx = word_indices(i);
+   x(idx) = 1;
+end
+
 
 
 
