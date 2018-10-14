@@ -27,10 +27,17 @@ centroids = zeros(K, n);
 %
 
 
+num_nodes = zeros(K, 1);
+sum_nodes = zeros(K, n);
+
+for i = 1:m
+   z = idx(i);
+   num_nodes(z) += 1;
+   sum_nodes(z, :) += X(i, :);
+end
 
 
-
-
+centroids = sum_nodes ./ num_nodes;
 
 
 % =============================================================
